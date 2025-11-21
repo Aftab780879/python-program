@@ -7,8 +7,13 @@ def user_menu():
     print("3. Delete")
     print("4. Exit")
     print("5. View Records\n")
+    user_menu_choise=input("Please Enter Your Choise: ")
 
-    user_menu_choise=int(input("Please Enter Your Choise: "))
+    if user_menu_choise.isdigit():
+        user_menu_choise=int(user_menu_choise)
+        
+
+
     return user_menu_choise
 
 def student_registration():
@@ -20,33 +25,42 @@ def student_registration():
     student_disc["contact"]=input("Please enter your contact number: ")
     student_disc["qualification"]=[]
     qualification_disc={}
-    qualification_disc["Qualification"]=input("please enter your QUALIFICATION: ")
+    qualification_disc["Qualification"]=input("please enter your QUALIFICATION(only use small letters): ")
     qualification_disc["Year"]=input("please enter the year:  ")
     student_disc["qualification"].append(qualification_disc)
+    extra_qualification()
+    student_list.append(student_disc)
+
+
+def extra_qualification():
     while 1:
         print("\ndo you want to enter more qualification")
         print("Press 1. To Add More Qualification")
         print("press 2. To Continue\n")
-        qualification_entry=int(input("Please enter your choise: "))
+        qualification_entry=input("Please enter your choise: ")
+        if qualification_entry.isdigit():
+            qualification_entry=int(qualification_entry)
         if qualification_entry==1:
             qualification_disc={}
-            qualification_disc["Qualification"]=input("please enter your QUALIFICATION: ")
+            qualification_disc["Qualification"]=input("please enter your QUALIFICATION(only use small letters): ")
             qualification_disc["Year"]=input("please enter the year:  ")
             student_disc["qualification"].append(qualification_disc)
         elif qualification_entry==2:
             break   
         else:
-            print("invalid choise")
-    student_list.append(student_disc)
+            print("invalid choise")    
 
 def user_searching():
+    search_found=0
     while 1:
 
         print("********* REPORT *********")
         print("Press 1. To Find details with Contact")
         print("Press 2. To Find details with Qualification")
         print("press 3. To Exit")
-        search_entry=int(input("Please enter Your choise: "))
+        search_entry=input("Please enter Your choise: ")
+        if search_entry.isdigit():
+            search_entry=int(search_entry)
         if search_entry==1:
             contact_entry=input("Please enter the Contact: ")
             for item in student_list:
@@ -55,11 +69,16 @@ def user_searching():
                 else:
                     print("not found")    
         elif search_entry==2:
-            qualification_search=input("please enter the qualification from which you want to search: ")     
+            qualification_search=input("please enter the qualification from which you want to search(use alphabets only): ")     
             for item in student_list:
                 for value in item["qualification"]:
                     if value["Qualification"].lower() == qualification_search.lower():
-                        print(item) 
+                        print(item)
+                        search_found+=1
+                        if search_found==0:
+                            print("NO DATA FOUND")
+                       
+
         elif search_entry==3:
             break               
         else:
@@ -100,3 +119,4 @@ def all_operation():
             print(" WRONG INPUT ! , please try again")
 
 
+all_operation()
