@@ -64,7 +64,7 @@ def user_searching():
 
 def user_deleting():
     user_delete_choise=int(input("Please Enter the user index number you want to delete: "))
-    student_list.pop[user_delete_choise]
+    student_list.pop(user_delete_choise)
 
 
 
@@ -78,7 +78,7 @@ while 1:
     elif user_menu_choise==2:
         user_searching()
     elif user_menu_choise==3:
-        user_deleting()
+        user_delete_choise=user_deleting()
     elif user_menu_choise==5:
         print(student_list)
     else:
