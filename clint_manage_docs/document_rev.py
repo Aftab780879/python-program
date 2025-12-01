@@ -11,7 +11,7 @@ def docs_review(clint_dict,clint_list):
                     print("|               USER DETAILS             |")
                     print("------------------------------------------")
                     print(f"ID               =  {clint_dict["id"]}")
-                    print(f"NAME             =  {clint_dict["name"]}")
+                    print(f"NAME             =  {clint_dict["first_name"]} {clint_dict["last_name"]}")
                     print(f"ADDRESS          =  {clint_dict["address"]}")
                     print("\n*************   DOCUMENTS   *************")
                     aadhar=clint_dict["documents"][0]
@@ -39,7 +39,7 @@ def docs_review(clint_dict,clint_list):
                                 return
                             elif save_details_choice==2:
                                 print(" Your Details Were not Saved")
-                                break
+                                return
                             else:
                                 print(" Wrong Input , Please Try Again")
 
