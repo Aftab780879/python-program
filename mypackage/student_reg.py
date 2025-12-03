@@ -1,14 +1,13 @@
-
 def student_registration(student_list):
-   
     student_disc={}
+    student_disc["qualification"]=[]
     qualification_disc={}
     print(f"********* Student Data *********")
     student_disc["id"]= input("please enter the ID: ")
     student_disc["name"]=input("please enter the students NAME: ")
     student_disc["address"]=input("please enter the students ADDRESS: ")
     student_disc["contact"]=input("Please enter your contact number: ")
-    student_disc["qualification"]=[]
+    
     qualification_disc["Qualification"]=input("please enter your QUALIFICATION(only use small letters): ")
     qualification_disc["Year"]=input("please enter the year:  ")
     student_disc["qualification"].append(qualification_disc)
@@ -31,4 +30,3 @@ def student_registration(student_list):
             else:
                 print("invalid choise")
     student_list.append(student_disc)
-    return student_list    

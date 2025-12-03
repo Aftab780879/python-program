@@ -1,10 +1,8 @@
-
 def user_searching(student_list):
     if len(student_list)>0:
 
-       
+        search_found=0
         while 1:
-            search_found=0
 
             print("********* REPORT *********")
             print("Press 1. To Find details with Contact")
@@ -26,7 +24,7 @@ def user_searching(student_list):
                         for value in item["qualification"]:
                             if value["Qualification"].lower() == qualification_search.lower():
                                 print(item)
-                                search_found=1
+                                search_found+=1
                                 if search_found==0:
                                     print("NO DATA FOUND")
                        
@@ -38,4 +36,4 @@ def user_searching(student_list):
             else:
                 print("INVALID INPUT")        
     else:
-        print("No Records to Show")  
+        print("No Records to Show")
