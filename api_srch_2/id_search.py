@@ -3,7 +3,7 @@ def user_searching(clint_details):
     try:
     
         if len(clint_details)>0:
-            id_entry=int(input("Please enter the Id: "))
+            id_entry=input("Please enter the Id: ")
             if id_entry.isdigit():
                 id_entry=int(id_entry)
                 for item in clint_details:
