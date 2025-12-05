@@ -1,7 +1,7 @@
 import os
 import time
 
-folder_path=os.path.join(os.getcwd(),"file_creation")
+folder_path=r"C:\File Folder"
 
 
 file_number=input("Please enter the number of files you want to create: ")
