@@ -1,10 +1,9 @@
-from student_reg_inbuilt.read_file import read_json
+from student_reg_inbuilt.write_file import write_json
 import uuid
 import json
 def registration(student_list):
     json_file=r"C:\indixpert\python\python-practice\student_reg_inbuilt\student.json"
-    data=read_json()
-    student_list=json.loads(data)
+    
 
     student_dict={}
     
@@ -17,8 +16,7 @@ def registration(student_list):
         if student_dict["contact"].isdigit and len(student_dict["contact"])==10:
             student_dict["contact"]=int(student_dict["contact"])
             student_list.append(student_dict)
-            with open(json_file,'w') as file:
-                file.write(json.dumps(student_list,indent=4))
+            write_json(json_file,student_list)
             print("Successfully added student")
             break
 
