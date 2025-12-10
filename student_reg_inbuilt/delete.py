@@ -11,6 +11,7 @@ def delete_student_data(student_list,json_file):
                     student_list.remove(item)
                     write_json(json_file,student_list)
                     print("\nData Deleted Successfully")
+                    break
                 else:
                     print("\nNo data Available with this details")    
         else:

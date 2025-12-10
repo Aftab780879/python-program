@@ -1,6 +1,6 @@
 def reg_menu():
-    print("*****DASHBOARD*****")
-    print("\n 1. To Register")
+    print("\n*****DASHBOARD*****")
+    print("   1. To Register")
     print("   2. To Search")
     print("   3. To Update")
     print("   4. To Delete")
