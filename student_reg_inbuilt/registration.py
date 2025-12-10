@@ -1,6 +1,6 @@
 from student_reg_inbuilt.write_file import write_json
 import uuid
-import json
+
 def registration(student_list):
     json_file=r"C:\indixpert\python\python-practice\student_reg_inbuilt\student.json"
     
@@ -8,18 +8,27 @@ def registration(student_list):
     student_dict={}
     
     student_dict["id"]=uuid.uuid4().hex[:8]
-    student_dict["name"]=input("please enter student name: ")
-    student_dict["address"]=input("please enter student address: ")
-    while 1:
-         
-        student_dict["contact"]=input("please enter contact number: ")
-        if student_dict["contact"].isdigit and len(student_dict["contact"])==10:
-            student_dict["contact"]=int(student_dict["contact"])
-            student_list.append(student_dict)
-            write_json(json_file,student_list)
-            print("Successfully added student")
-            break
+    student_dict["first_name"]=input("please enter student first name: ").lower()
+    if student_dict["first_name"].isalpha():
+        student_dict["last_name"]=input("please enter student last name: ").lower()
+        if student_dict["last_name"].isalpha():
+             student_dict["address"]=input("please enter student address: ").lower()
+             if student_dict["address"].isalpha():
 
+                while 1:
+                    
+                    student_dict["contact"]=input("please enter contact number: ")
+                    if student_dict["contact"].isdigit and len(student_dict["contact"])==10:
+                        student_dict["contact"]=int(student_dict["contact"])
+                        student_list.append(student_dict)
+                        write_json(json_file,student_list)
+                        print("Successfully added student")
+                        break
+                    else:
+                            print("Invalid Contact Number") 
+             else:
+                  print("please use only characters")               
         else:
-                print("Invalid Contact Number") 
-          
+             print("please use only characters")    
+    else:
+         print("please use only characters")

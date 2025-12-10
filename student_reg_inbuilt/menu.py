@@ -1,9 +1,10 @@
 def reg_menu():
-    print("\n1. To Register")
-    print("2. To Search")
-    print("3. To Update")
-    print("4. To Delete")
-    print("5. To Exit")
+    print("*****DASHBOARD*****")
+    print("\n 1. To Register")
+    print("   2. To Search")
+    print("   3. To Update")
+    print("   4. To Delete")
+    print("   5. To Exit")
 
     reg_menu_choice=input("please enter your choice: ")
     if reg_menu_choice.isdigit():
