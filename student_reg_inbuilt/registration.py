@@ -22,13 +22,13 @@ def registration(student_list):
                         student_dict["contact"]=int(student_dict["contact"])
                         student_list.append(student_dict)
                         write_json(json_file,student_list)
-                        print("Successfully added student")
+                        print("\nSuccessfully added student")
                         break
                     else:
-                            print("Invalid Contact Number") 
+                            print("\nInvalid Contact Number") 
              else:
-                  print("please use only characters")               
+                  print("\nplease use only characters")               
         else:
-             print("please use only characters")    
+             print("\nplease use only characters")    
     else:
-         print("please use only characters")
+         print("\nplease use only characters")

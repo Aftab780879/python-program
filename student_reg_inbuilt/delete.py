@@ -7,7 +7,7 @@ def delete_student_data(student_list,json_file):
             contact_number_search=int(contact_number_search)
             for item in student_list:
                 if item["contact"]==contact_number_search:
-                    print(json.dumps(item))
+                    print(json.dumps(item,indent=4))
                     student_list.remove(item)
                     write_json(json_file,student_list)
                     print("\nData Deleted Successfully")
